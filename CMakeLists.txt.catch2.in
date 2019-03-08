@@ -1,0 +1,26 @@
+# Based on:
+#   Building GoogleTest and GoogleMock directly in a CMake project
+#   July 25, 2015 by Craig Scott
+#   https://crascit.com/2015/07/25/cmake-gtest/
+
+cmake_minimum_required(VERSION 3.0.2)
+
+project(catch2-download NONE)
+
+include(ExternalProject)
+
+message( "calling ExternalProject_Add()..." )
+
+# GCC 4.6.3 with -std=c++0x can compile Catch v1.8.2
+
+ExternalProject_Add(catch2
+    GIT_REPOSITORY https://github.com/catchorg/Catch2/
+    GIT_TAG v1.8.2
+    SOURCE_DIR "${CMAKE_BINARY_DIR}/catch2-src"
+    BINARY_DIR "${CMAKE_BINARY_DIR}/catch2-build"
+    CONFIGURE_COMMAND ""
+    BUILD_COMMAND ""
+    INSTALL_COMMAND ""
+    TEST_COMMAND ""
+)
+
