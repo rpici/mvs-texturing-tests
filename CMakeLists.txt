@@ -61,8 +61,8 @@ message( "\nCMake version is ${CMAKE_VERSION}.\n" )
 
 add_executable( tests
     CATCH_CONFIG_MAIN.cpp
+    local_seam_leveling_tests.cpp
 )
 
 target_include_directories( tests PRIVATE "${CMAKE_BINARY_DIR}/catch2-src/single_include" )
-
 
